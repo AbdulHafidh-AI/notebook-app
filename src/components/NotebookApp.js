@@ -4,6 +4,7 @@ import { getData } from '../utils/data';
 import NotebookInput from "./NotebookInput";
 
 
+
 class NotebookApp extends React.Component{
 
     constructor(props){
@@ -14,11 +15,23 @@ class NotebookApp extends React.Component{
 
         this.onDeleteHandler = this.onDeleteHandler.bind(this);
         this.onAddNotebookHandler = this.onAddNotebookHandler.bind(this);
+        this.onArchievedHandler = this.onArchievedHandler.bind(this);
         
     }
 
     onDeleteHandler(id){
         const notebooks = this.state.notebooks.filter(notebook => notebook.id !== id);
+        this.setState({notebooks});
+    }
+
+    onArchievedHandler(id){
+        const notebooks = this.state.notebooks.map(notebook => {
+            if(notebook.id === id){
+                notebook.archieved = true;
+            }
+            return notebook;
+        }
+        );
         this.setState({notebooks});
     }
 
@@ -45,6 +58,8 @@ class NotebookApp extends React.Component{
                 <NotebookInput addNotebook={this.onAddNotebookHandler}/>
                 <h2>Recent Notebooks</h2>
                 <NotebookList notebooks={this.state.notebooks} onDelete={this.onDeleteHandler}/>
+                <h2>Archieved Notebooks</h2>
+                
             </div>
         );
     }
