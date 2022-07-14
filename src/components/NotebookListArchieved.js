@@ -2,7 +2,7 @@ import React from "react";
 import NotebookItem from "./NotebookItem";
 
 
-function NotebookListArchived({ id, notebooks, onDelete, onArchieved }) {
+function NotebookListArchived({  notebooks, onDelete, onArchieved }) {
      
      if(notebooks.length === 0) {
          return <div className="notebook-list">No archived notebooks</div>
