@@ -17,7 +17,7 @@ class NotebookApp extends React.Component{
         this.onDeleteHandler = this.onDeleteHandler.bind(this);
         this.onAddNotebookHandler = this.onAddNotebookHandler.bind(this);
         this.onArchievedHandler = this.onArchievedHandler.bind(this);
-        this.onUArchievedHandler = this.onUArchievedHandler.bind(this);
+        this.onUnArchievedHandler = this.onUnArchievedHandler.bind(this);
         
     }
 
@@ -26,7 +26,7 @@ class NotebookApp extends React.Component{
         this.setState({notebooks});
     }
 
-    onUArchievedHandler(id){
+    onUnArchievedHandler(id){
         const notebooks = this.state.notebooks.map(notebook => {
             if(notebook.id === id){
                 notebook.archieved = false;
@@ -84,7 +84,7 @@ class NotebookApp extends React.Component{
                 <h2>Recent Notebooks</h2>
                 <NotebookList notebooks={notebooks} onDelete={this.onDeleteHandler} onArchieved={this.onArchievedHandler} />
                 <h2>Archieved Notebooks</h2>
-                <NotebookListArchived notebooks={notebooksArchieved} onDelete={this.onDeleteHandler} onUArchievedHandler={this.onUArchievedHandler} />
+                <NotebookListArchived notebooks={notebooksArchieved} onDelete={this.onDeleteHandler} onUnArchievedHandler={this.onUnArchievedHandler} />
             </div>
         );
     }
