@@ -51,6 +51,7 @@ class NotebookApp extends React.Component{
         });
     }
 
+
     render(){
         return (
             <div className="notebook-app">
