@@ -1,8 +1,8 @@
 import React from "react";
-import NotebookItem from "./NotebookItem";
+import NotebookItemArchieved from "./NotebookItemArchieved";
 
 
-function NotebookListArchived({  notebooks, onDelete, onArchieved }) {
+function NotebookListArchived({  notebooks, onDelete, onUnArchieved }) {
      
      if(notebooks.length === 0) {
          return <div className="notebook-list">No archived notebooks</div>
@@ -12,7 +12,7 @@ function NotebookListArchived({  notebooks, onDelete, onArchieved }) {
               <div className="notebook-list">
                 {
                      notebooks.map((notebook) => (
-                          <NotebookItem key={notebook.id} id={notebook.id} onDelete={onDelete} onArchieved = {onArchieved}
+                          <NotebookItemArchieved key={notebook.id} id={notebook.id} onDelete={onDelete} onUnArchieved = {onUnArchieved}
                                          {...notebook} />
                      ))
                 }
