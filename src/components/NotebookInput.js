@@ -39,7 +39,7 @@ class NotebookInput extends React.Component{
 
     onSubmitEventHandler(event) {
         event.preventDefault();
-        this.props.addContact(this.state);
+        this.props.addNotebook(this.state);
       }
 
       render(){
