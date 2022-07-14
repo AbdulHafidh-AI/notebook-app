@@ -20,6 +20,13 @@ const getData = () => {
             description: 'Python is a programming language that is designed to be highly readable and easy to use. It is designed to be highly efficient and easy to learn. Python is a dynamic language, which means that it is capable of executing code at run-time. Python is a high-level language, which means that it is designed for programmer productivity and not for machine processing. Python is a general-purpose language, which means that it can be used for many different purposes, including web development, desktop application development, and game development. Python is also a platform-independent language, which means that it can be used on a wide variety of platforms, including mobile devices and the desktop.',
             createdAt: '2020-01-01',
             archieved: false,
+        },
+        {
+            id: 4,
+            title: 'C++ Programming',
+            description: 'C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation. It is a strict superset of C, and is a member of the C family of languages. C++ is a template-based language, which means that the compiler can generate code for specific types of objects. C++ is a high-level language, which means that it is designed for programmer productivity and not for machine processing. C++ is a general-purpose language, which means that it can be used for many different purposes, including web development, desktop application development, and game development. C++ is also a platform-independent language, which means that it can be used on a wide variety of platforms, including mobile devices and the desktop.',
+            createdAt: '2020-01-01',
+            archieved: true,
         }
     ];
 }

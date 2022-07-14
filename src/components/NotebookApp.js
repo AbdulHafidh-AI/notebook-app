@@ -2,6 +2,7 @@ import React from "react";
 import NotebookList from "./NotebookList";
 import { getData } from '../utils/data';
 import NotebookInput from "./NotebookInput";
+import NotebookListArchived from "./NotebookListArchieved";
 
 
 
@@ -57,9 +58,9 @@ class NotebookApp extends React.Component{
                 <h2>Add Notebooks</h2>
                 <NotebookInput addNotebook={this.onAddNotebookHandler}/>
                 <h2>Recent Notebooks</h2>
-                <NotebookList notebooks={this.state.notebooks} onDelete={this.onDeleteHandler}/>
+                <NotebookList notebooks={this.state.notebooks} onDelete={this.onDeleteHandler} onArchieved= {this.onArchievedHandler}/>
                 <h2>Archieved Notebooks</h2>
-                
+                <NotebookListArchived notebooks={this.state.notebooks} onArchieved={this.onArchievedHandler} onDelete={this.onDeleteHandler}/>
             </div>
         );
     }

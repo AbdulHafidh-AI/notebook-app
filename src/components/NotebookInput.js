@@ -39,14 +39,20 @@ class NotebookInput extends React.Component{
 
     onSubmitEventHandler(event) {
         event.preventDefault();
+        // Make sure that the archieved is false
+        this.props.addNotebook({
+            title: this.state.title,
+            description: this.state.description,
+            archieved: false
+        });
         this.props.addNotebook(this.state);
       }
 
       render(){
         return (
             <form className="notebook-input" onSubmit={this.onSubmitEventHandler}>
-                <input type="text" required placeholder="title" value={this.state.title} onChange={this.onTitleChangeEventHandler}/>
-                <input type="text"  required placeholder="description" value={this.state.description} onChange={this.onDescriptionChangeEventHandler}/>
+                <input type="text" required placeholder="title" value={this.state.title} onChange={this.onTitleChangeEventHandler}/> <br></br>
+                <input type="textarea"  required placeholder="description" value={this.state.description} onChange={this.onDescriptionChangeEventHandler}/> <br />
                 <button type="submit">Add Note</button>
             </form>
         );
