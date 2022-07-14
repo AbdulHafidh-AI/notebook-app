@@ -53,15 +53,26 @@ class NotebookApp extends React.Component{
 
 
     render(){
+        // check if notebooks is archieved
+        const notebooks = this.state.notebooks.filter(notebook => notebook.archieved === false);
+        const notebooksArchieved = this.state.notebooks.filter(notebook => notebook.archieved === true);
+        // return(
+        //     <div className="notebook-app">
+        //         <NotebookInput onAddNotebook={this.onAddNotebookHandler} />
+        //         <NotebookList notebooks={notebooks} onDelete={this.onDeleteHandler} onArchieved={this.onArchievedHandler} />
+        //         <h1>Archieved Notebooks</h1>
+        //         <NotebookListArchived notebooks={notebooksArchieved} onDelete={this.onDeleteHandler} onArchieved={this.onArchievedHandler} />
+        //     </div>
+        // );
         return (
             <div className="notebook-app">
                 <h1>Notebooks App</h1>
                 <h2>Add Notebooks</h2>
                 <NotebookInput addNotebook={this.onAddNotebookHandler}/>
                 <h2>Recent Notebooks</h2>
-                <NotebookList notebooks={this.state.notebooks} onDelete={this.onDeleteHandler} onArchieved= {this.onArchievedHandler}/>
+                <NotebookList notebooks={notebooks} onDelete={this.onDeleteHandler} onArchieved={this.onArchievedHandler} />
                 <h2>Archieved Notebooks</h2>
-                <NotebookListArchived notebooks={this.state.notebooks} onArchieved={this.onArchievedHandler} onDelete={this.onDeleteHandler}/>
+                <NotebookListArchived notebooks={notebooksArchieved} onDelete={this.onDeleteHandler} onArchieved={this.onArchievedHandler} />
             </div>
         );
     }
