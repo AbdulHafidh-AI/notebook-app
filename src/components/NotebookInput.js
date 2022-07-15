@@ -43,7 +43,9 @@ class NotebookInput extends React.Component{
         this.props.addNotebook({
             title: this.state.title,
             description: this.state.description,
+            createdAt: new Date(),
             archieved: false
+            
         });
         this.props.addNotebook(this.state);
       }
@@ -53,7 +55,7 @@ class NotebookInput extends React.Component{
             <form className="notebook-input" onSubmit={this.onSubmitEventHandler}>
                 <input type="text" required placeholder="title" value={this.state.title} onChange={this.onTitleChangeEventHandler}/> <br></br>
                 <input type="textarea"  required placeholder="description" value={this.state.description} onChange={this.onDescriptionChangeEventHandler}/> <br />
-                <button type="submit">Add Note</button>
+                <button type="submit" className="notebook-input__button">Add Notebook</button>
             </form>
         );
       }

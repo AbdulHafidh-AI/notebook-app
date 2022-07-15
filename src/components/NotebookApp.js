@@ -66,7 +66,7 @@ class NotebookApp extends React.Component{
 
     render(){
         // check if notebooks is archieved
-        const notebooks = this.state.notebooks.filter(notebook => notebook.archieved === false);
+        const notebooks = this.state.notebooks.filter(notebook => notebook.archieved === false || notebook.archieved === undefined);
         const notebooksArchieved = this.state.notebooks.filter(notebook => notebook.archieved === true);
         // return(
         //     <div className="notebook-app">
