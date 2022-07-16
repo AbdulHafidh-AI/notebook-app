@@ -5,7 +5,7 @@ import ArchievedButton from "./ArchievedButton";
 
 function NotebookItem({ id, title, description, onDelete, onArchieved }) {
     return (
-        <div className="notebook-item">
+        <div className="notebook-item card">
           
             <NotebookItemBody title={title} description={description} />
             <DeleteButton id={id} onDelete={onDelete} />
