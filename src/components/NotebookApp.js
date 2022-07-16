@@ -48,7 +48,7 @@ class NotebookApp extends React.Component{
         this.setState({notebooks});
     }
 
-    onAddNotebookHandler({title, description}){
+    onAddNotebookHandler({title, description, archieved = false}){
         this.setState((prevState) => {
             return{
                 notebooks:[

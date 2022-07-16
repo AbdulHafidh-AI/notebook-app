@@ -39,14 +39,6 @@ class NotebookInput extends React.Component{
 
     onSubmitEventHandler(event) {
         event.preventDefault();
-        // Make sure that the archieved is false
-        this.props.addNotebook({
-            title: this.state.title,
-            description: this.state.description,
-            createdAt: new Date(),
-            archieved: false
-            
-        });
         this.props.addNotebook(this.state);
       }
 

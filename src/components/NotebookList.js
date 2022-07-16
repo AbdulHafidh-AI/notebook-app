@@ -9,7 +9,7 @@ function NotebookList({ notebooks, onDelete, onArchieved }) {
     }
 
     return(
-        <div className="notebook-list">
+        <div className="notebook-list card" >
             {
                 notebooks.map((notebook) => (
                     <NotebookItem key={notebook.id} id={notebook.id} onDelete={onDelete} onArchieved = {onArchieved}
