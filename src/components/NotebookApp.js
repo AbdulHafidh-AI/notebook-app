@@ -56,7 +56,8 @@ class NotebookApp extends React.Component{
                     {
                         id: +new Date(),
                         title,
-                        description
+                        description,
+                        archieved
                     }
                 ]
             }
