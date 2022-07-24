@@ -85,7 +85,8 @@ class NotebookApp extends React.Component{
                 <h2>Recent Notebooks</h2>
                 <NotebookList notebooks={notebooks} onDelete={this.onDeleteHandler} onArchieved={this.onArchievedHandler} />
                 <h2>Archieved Notebooks</h2>
-                <NotebookListArchived notebooks={notebooksArchieved} onDelete={this.onDeleteHandler} onUnArchievedHandler={this.onUnArchievedHandler} />
+                {/* <NotebookList notebooks={notebooksArchieved} onDelete={this.onDeleteHandler} onArchieved={this.onUnArchievedHandler} /> */}
+                <NotebookListArchived notebooks={notebooksArchieved} onDelete={this.onDeleteHandler} onUnArchieved={this.onUnArchievedHandler} />
             </div>
         );
     }
