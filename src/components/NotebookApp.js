@@ -1,6 +1,6 @@
 import React from "react";
 import NotebookList from "./NotebookList";
-import { getInitialData } from '../utils/data';
+import { getInitialData, showFormattedDate } from '../utils/data';
 import NotebookInput from "./NotebookInput";
 import NotebookListArchived from "./NotebookListArchieved";
 
@@ -48,7 +48,7 @@ class NotebookApp extends React.Component{
         this.setState({notebooks});
     }
 
-    onAddNotebookHandler({title, body, archieved = false}){
+    onAddNotebookHandler({title, body, archieved = false, createdAt = new Date()}){
         this.setState((prevState) => {
             return{
                 notebooks:[
@@ -57,7 +57,8 @@ class NotebookApp extends React.Component{
                         id: +new Date(),
                         title,
                         body,
-                        archieved
+                        archieved,
+                        createdAt: showFormattedDate(createdAt)
                     }
                 ]
             }
