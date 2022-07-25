@@ -1,34 +1,56 @@
-const getData = () => {
-    return [
-        {
-            id: 1,
-            title: 'C Programming',
-            description: 'C programming is a general-purpose, imperative computer programming language that is designed to have low memory requirements, high speed, and ease of use. It is a member of the C family of programming languages, which originally developed to handle the problem of low-level programming of microprocessors. C is commonly used to develop software for microcomputers, personal computers, and handhelds. It is also used to develop software for mainframes, servers, and other large systems"',
-            createdAt: '2020-01-01',
-            archieved: false,
-        },
-        {
-            id: 2,
-            title: 'Java Programming',
-            description: 'Java is a programming language that is classically used for developing software. It is also used for developing mobile applications, which is a type of application that runs on a mobile device, such as a phone or tablet. Java is a high-level language, which means that it is designed for programmer productivity and not for machine processing. Java is a general-purpose language, which means that it can be used for many different purposes, including web development, desktop application development, and game development. Java is also a platform-independent language, which means that it can be used on a wide variety of platforms, including mobile devices and the desktop.',
-            createdAt: '2020-01-01',
-            archieved: false,
-        },
-        {
-            id: 3,
-            title: 'Python Programming',
-            description: 'Python is a programming language that is designed to be highly readable and easy to use. It is designed to be highly efficient and easy to learn. Python is a dynamic language, which means that it is capable of executing code at run-time. Python is a high-level language, which means that it is designed for programmer productivity and not for machine processing. Python is a general-purpose language, which means that it can be used for many different purposes, including web development, desktop application development, and game development. Python is also a platform-independent language, which means that it can be used on a wide variety of platforms, including mobile devices and the desktop.',
-            createdAt: '2020-01-01',
-            archieved: false,
-        },
-        {
-            id: 4,
-            title: 'C++ Programming',
-            description: 'C++ is a general-purpose programming language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation. It is a strict superset of C, and is a member of the C family of languages. C++ is a template-based language, which means that the compiler can generate code for specific types of objects. C++ is a high-level language, which means that it is designed for programmer productivity and not for machine processing. C++ is a general-purpose language, which means that it can be used for many different purposes, including web development, desktop application development, and game development. C++ is also a platform-independent language, which means that it can be used on a wide variety of platforms, including mobile devices and the desktop.',
-            createdAt: '2020-01-01',
-            archieved: true,
-        }
-    ];
+const getInitialData = () => ([
+  {
+    id: 1,
+    title: "Babel",
+    body: "Babel merupakan tools open-source yang digunakan untuk mengubah sintaks ECMAScript 2015+ menjadi sintaks yang didukung oleh JavaScript engine versi lama. Babel sering dipakai ketika kita menggunakan sintaks terbaru termasuk sintaks JSX.",
+    createdAt: '2022-04-14T04:27:34.572Z',
+    archived: false,
+  },
+  {
+    id: 2,
+    title: "Functional Component",
+    body: "Functional component merupakan React component yang dibuat menggunakan fungsi JavaScript. Agar fungsi JavaScript dapat disebut component ia harus mengembalikan React element dan dipanggil layaknya React component.",
+    createdAt: '2022-04-14T04:27:34.572Z',
+    archived: false,
+  },
+  {
+    id: 3,
+    title: "Modularization",
+    body: "Dalam konteks pemrograman JavaScript, modularization merupakan teknik dalam memecah atau menggunakan kode dalam berkas JavaScript secara terpisah berdasarkan tanggung jawabnya masing-masing.",
+    createdAt: '2022-04-14T04:27:34.572Z',
+    archived: false,
+  },
+  {
+    id: 4,
+    title: "Lifecycle",
+    body: "Dalam konteks React component, lifecycle merupakan kumpulan method yang menjadi siklus hidup mulai dari component dibuat (constructor), dicetak (render), pasca-cetak (componentDidMount), dan sebagainya. ",
+    createdAt: '2022-04-14T04:27:34.572Z',
+    archived: false,
+  },
+  {
+    id: 5,
+    title: "ESM",
+    body: "ESM (ECMAScript Module) merupakan format modularisasi standar JavaScript.",
+    createdAt: '2022-04-14T04:27:34.572Z',
+    archived: false,
+  },
+  {
+    id: 6,
+    title: "Module Bundler",
+    body: "Dalam konteks pemrograman JavaScript, module bundler merupakan tools yang digunakan untuk menggabungkan seluruh modul JavaScript yang digunakan oleh aplikasi menjadi satu berkas.",
+    createdAt: '2022-04-14T04:27:34.572Z',
+    archived: false,
+  },
+]);
+
+const showFormattedDate = (date) => {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  }
+  return new Date(date).toLocaleDateString("id-ID", options)
 }
 
-export { getData };
+export { getInitialData, showFormattedDate };

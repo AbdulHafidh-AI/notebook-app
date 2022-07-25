@@ -55,3 +55,9 @@ h2{
     padding: 20px;
     margin: 20px;
 }
+
+small{
+  /* always on the right */
+  float: right;
+  color: yellow;
+}

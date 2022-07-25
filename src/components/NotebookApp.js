@@ -1,6 +1,6 @@
 import React from "react";
 import NotebookList from "./NotebookList";
-import { getData } from '../utils/data';
+import { getInitialData } from '../utils/data';
 import NotebookInput from "./NotebookInput";
 import NotebookListArchived from "./NotebookListArchieved";
 
@@ -11,7 +11,7 @@ class NotebookApp extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            notebooks: getData(),
+            notebooks: getInitialData(),
         }
 
         this.onDeleteHandler = this.onDeleteHandler.bind(this);
@@ -48,7 +48,7 @@ class NotebookApp extends React.Component{
         this.setState({notebooks});
     }
 
-    onAddNotebookHandler({title, description, archieved = false}){
+    onAddNotebookHandler({title, body, archieved = false}){
         this.setState((prevState) => {
             return{
                 notebooks:[
@@ -56,7 +56,7 @@ class NotebookApp extends React.Component{
                     {
                         id: +new Date(),
                         title,
-                        description,
+                        body,
                         archieved
                     }
                 ]
@@ -82,7 +82,7 @@ class NotebookApp extends React.Component{
                 <h1>Notebooks App</h1>
                 <h2>Add Notebooks</h2>
                 <NotebookInput addNotebook={this.onAddNotebookHandler}/>
-                <h2>Recent Notebooks</h2>
+                <h2>Active Notebooks</h2>
                 <NotebookList notebooks={notebooks} onDelete={this.onDeleteHandler} onArchieved={this.onArchievedHandler} />
                 <h2>Archieved Notebooks</h2>
                 {/* <NotebookList notebooks={notebooksArchieved} onDelete={this.onDeleteHandler} onArchieved={this.onUnArchievedHandler} /> */}
